@@ -1,12 +1,19 @@
+//Function that checks whether ANY permutation of an input string is a palindrome
+//Allow for any ASCII character
+//Capitalized characters are considered equivalent to the corresponding lowercase character
+
+//Time Complexity: O(n)
+//Space Complexity: O(1)
+
 #include <string>
 #include <assert.h>
 using namespace std;
 
-const static int arrSize = 256;//allow for ascii characters
+const static int arrSize = 256; //allow for ascii characters
 
 bool palindPerm(string s) {
     int library[arrSize], countOdds = 0;
-    for(int i = 0; i < arrSize; i++)//initialize array with 0s
+    for(int i = 0; i < arrSize; i++) //initialize array with 0s
         library[i] = 0;
     
     for(int i = 0; i < s.size(); i++) {
