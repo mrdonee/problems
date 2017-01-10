@@ -1,0 +1,11 @@
+Bash Commands
+    python -m SimpleHTTPServer      //starts SimpleHTTPServer
+    python !$                       //grabs file from previous command and runs it
+
+Linux Commands
+    cat
+    less
+    wget    download a single webpage from the command line
+    curl    downloads a file and dumps the content to the command line
+    grep
+    wc -l   how many lines are in a file
