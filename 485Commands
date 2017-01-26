@@ -1,6 +1,7 @@
 Bash Commands
     python -m SimpleHTTPServer      //starts SimpleHTTPServer
     python !$                       //grabs file from previous command and runs it
+    ctrl + l                        //scrolls terminal until screen cleared
 
 Linux Commands
     cat

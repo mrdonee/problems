@@ -1,0 +1,32 @@
+#Interface options
+export PS1="\[\033[36m\]\u\[\033[m\]:\[\033[32m\]\t_\[\033[33;1m\]\W\[\033[m\]\$ "
+
+#history options
+export HISTCONTROL=ignoredups:ignorespace   #history ignores duplicates
+export HISTSIZE=10000   #history of 10000 commands
+export IGNOREEOF=2  #control-D needs to be hit twice to exit
+
+#this should do advanced search history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\eOA": history-search-backward'
+bind '"\eOB": history-search-forward'
+
+#Aliasing
+alias ll='ls -alh' #show all files and file info
+alias rebash='source ~/.bash_profile'
+alias subl='sublime' #use to open files in sublime
+
+    ##Finder navigation
+alias ..='cd ..' #back 1 directory
+alias ...='cd ../..' #back 2 directories
+alias finder='open -a Finder ./' #open current directory in Finder
+trash () { command mv "$@" ~/.Trash ; } #move file to Trash
+
+    ##network connections
+alias myip='ipconfig getifaddr en0' #show public IP adderess
+alias netCons='lsof -i' #show all network connections
+
+    ##display hidden files setting
+alias finderShowHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias finderHideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
