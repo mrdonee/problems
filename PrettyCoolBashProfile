@@ -11,6 +11,7 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind '"\eOA": history-search-backward'
 bind '"\eOB": history-search-forward'
+bind '"\t":menu-complete' #press tab to cycle through autocomplete options
 
 #Aliasing
 alias ll='ls -alh' #show all files and file info
@@ -20,7 +21,6 @@ alias subl='sublime' #use to open files in sublime
     ##Finder navigation
 alias ..='cd ..' #back 1 directory
 alias ...='cd ../..' #back 2 directories
-alias finder='open -a Finder ./' #open current directory in Finder
 trash () { command mv "$@" ~/.Trash ; } #move file to Trash
 
     ##network connections
