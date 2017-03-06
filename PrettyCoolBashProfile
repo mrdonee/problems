@@ -15,13 +15,41 @@ bind '"\t":menu-complete' #press tab to cycle through autocomplete options
 
 #Aliasing
 alias ll='ls -alh' #show all files and file info
-alias rebash='source ~/.bash_profile'
+alias rebash='source ~/.bash_profile' #apply changes to bash_profile
+alias viewBash='subl ~/.bash_profile'
 alias subl='sublime' #use to open files in sublime
+alias vmRun='vagrant up; vagrant ssh' #use to start virtual machine with vagrant
 
 ##Finder navigation
 alias ..='cd ..' #back 1 directory
 alias ...='cd ../..' #back 2 directories
 trash () { command mv "$@" ~/.Trash ; } #move file to Trash
+
+#Grep
+export GREP_COLOR='1;35'
+alias grep='grep --color -nrs'
+
+alias grepOpts='echo -c show number of occurences;
+                echo -h hide filenames;
+                echo -i case insensitive;
+                echo -I ignore binary files;
+                echo -l show only filenames;
+                echo "-n line numbers";
+                echo -r recursive;
+                echo -s ignore nonexistent/unreadable files;
+                echo -v show only nonmatches;
+                echo -w whole words;'
+
+alias grepRegex='echo "^        start line";
+                echo "$        end line";
+                echo "/        escape special characters";
+                echo "[]       match any of the enclosed characters, use hypen for range of characters";
+                echo "[^]      match any character expect those enclosed";
+                echo ".        match a single character of any value except end of line";
+                echo "*        match zero or more of the preceding character or expression";
+                echo "\{x,y\}  match x to y occurences of the preceding";
+                echo "\{x\}    match exactly x occurences of the preceding";
+                echo "\{x,\}   match x or more occurences of the preceding;"'
 
 ##network connections
 alias myip='ipconfig getifaddr en0' #show public IP adderess
