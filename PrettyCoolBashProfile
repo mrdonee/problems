@@ -17,7 +17,7 @@ bind '"\t":menu-complete' #press tab to cycle through autocomplete options
 alias ll='ls -alh' #show all files and file info
 alias rebash='source ~/.bash_profile' #apply changes to bash_profile
 alias viewBash='subl ~/.bash_profile'
-alias subl='sublime' #use to open files in sublime
+alias subl='sublime' #use to open files in sublime, must use with https://ashleynolan.co.uk/blog/launching-sublime-from-the-terminal
 alias vmRun='vagrant up; vagrant ssh' #use to start virtual machine with vagrant
 
 ##Finder navigation
