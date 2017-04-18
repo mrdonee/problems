@@ -1,14 +1,107 @@
-Bash Commands
-    cmd + k                         //clears all terminal output
-    ctrl + a                        //moves cursor to beginning of bash command
-    ctrl + l                        //scrolls terminal until screen cleared
-    python -m SimpleHTTPServer      //starts SimpleHTTPServer
-    python !$                       //grabs file from previous command and runs it
+# Users and Groups
+whoami                                  # current user
 
-Linux Commands
-    cat
-    curl    downloads a file and dumps the content to the command line
-    grep    search
-    less
-    wc -l   how many lines are in a file
-    wget    download a single webpage from the command line
+# Machines
+hostname                                # name of this computer
+uptime                                  # time since power on
+
+# Files and folders
+ls -l                                   # include time, size, etc.
+ls -a                                   # include hidden files
+ls -A                                   # include hidden files, but not . or ..
+ls -t                                   # sort by time
+ls -ltr                                 # newest files last
+ls --color                              # colorize output
+ls --human-readable                     # human-readable file sizes
+ls --ignore-backups                     # ignore *~ files
+mkdir DIR                               # make a directory
+rmdir DIR                               # remove a directory
+rm FILE                                 # remove a file
+rm -r DIR                               # remove directory and files
+rm -rf DIR                              # ^^^ and don't ask any questions
+touch FILE                              # create empty file, if it doesn't exist
+
+# Paths
+pwd                                     # current directory
+pwd -P                                  # current directory, absolute path
+cd -                                    # return to previous directory (bash)
+# Finding files
+find . -name hello.txt                  # find hello.txt, starting at PWD
+find / -name hello.txt                  # find hello.txt, starting at /
+find . '*.txt'                          # txt files
+find . '*hello*'                        # anything with "hello" in the filename
+find . -type f                          # plain files
+find . -type d                          # directories
+
+# Processes and Threads
+ps                                      # display my processes
+ps -u USER                              # ^^^ USER's processes
+ps -ax                                  # all processes on the machine
+ps -axM                                 # all processes and threads
+ps -axvcm                               # sort by memory usage
+ps -axvcr                               # sort by CPU usage
+kill PID                                # kill process with PID
+kill -0 PID                             # Check if process is running
+
+# Network Utilities
+ping google.com                         # Check if a host is up
+host www.google.com                     # DNS lookup
+dig www.google.com                      # DNS lookup
+dig -x 141.212.106.7                    # reverse DNS lookup
+whois www.google.com                    # domain name registration info
+telnet HOST 80                          # connect to web server
+tcpdump                                 # watch packets on all network ifcs
+tcpdump tcp                             # only one protocol
+tcpdump port 80                         # only one port
+
+# Web Utilities
+python -m SimpleHTTPServer 8000         # start a file server at ./ on port 8000
+wget https://www.google.com/            # download one page
+youtube-dl URL                          # download a youtube video
+curl ifconfig.me                        # what is my IP address?
+
+# Email
+sendmail user@example.com < email.txt   # send email from CLI
+
+# SSH
+ssh HOST                               # connect to HOST
+ssh USER@HOST                          # connect to HOST as USER
+
+# Bash shell scripting
+cmd + k                         //clears all terminal output
+ctrl + a                        //moves cursor to beginning of bash command
+ctrl + l                        //scrolls terminal until screen cleared
+echo "hello world" > FILE               # print file
+echo "hello world" >> FILE              # append file
+
+# Bash shell productivity
+mv file{,.old}                          # Move a file
+mv filename newFilename                 # Change filename
+sudo !!                                 # Repeat last command with sudo
+
+# Misc text processing
+cat FILE1                               # print file to terminal
+cat FILE1 FILE2                         # print files to terminal
+cat -n                                  # prepend line numbers
+wc                                      # word, line, character and byte count
+wc -l                                   # line count
+/usr/share/dict/words                   # All the words in the dictionary
+
+# Date and time
+date '+%s'                                        # current time in seconds
+date '+%Y-%m-%d_%H:%M:%S'                         # format 2016-06-20_13:13:19
+
+# File differences
+diff FILE1 FILE2                        # view differences of two files
+sdiff                                   # same as diff --side-by-side
+colordiff                               # same as diff, but with color
+
+# Random
+shuf                                    # shuffle lines
+shuf -i 1-100 -n 1                      # Random number between [1, 100]
+
+# Python
+virtualenv venv                         # create
+virtualenv -p python3 venv              # create, Python 3
+source ./venv/bin/activate              # enable, bash
+deactivate                              # disable
