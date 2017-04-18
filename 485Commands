@@ -1,12 +1,14 @@
 Bash Commands
+    cmd + k                         //clears all terminal output
+    ctrl + a                        //moves cursor to beginning of bash command
+    ctrl + l                        //scrolls terminal until screen cleared
     python -m SimpleHTTPServer      //starts SimpleHTTPServer
     python !$                       //grabs file from previous command and runs it
-    ctrl + l                        //scrolls terminal until screen cleared
 
 Linux Commands
     cat
-    less
-    wget    download a single webpage from the command line
     curl    downloads a file and dumps the content to the command line
-    grep
+    grep    search
+    less
     wc -l   how many lines are in a file
+    wget    download a single webpage from the command line

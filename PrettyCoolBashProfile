@@ -2,11 +2,11 @@
 export PS1="\[\033[36m\]\u\[\033[m\]|\[\033[32m\]\t\[\033[m\]|\[\033[33;1m\]\W\[\033[m\]\$ "
 
 #history options
-export HISTCONTROL=ignoredups:ignorespace   #history ignores duplicates
-export HISTSIZE=1000   #history of 10000 commands
+export HISTCONTROL=ignoredups:ignorespace   #history ignores duplicates and commands that start with ' '
+export HISTSIZE=1000   #history of 1000 commands, default is 500
 export IGNOREEOF=2  #control-D needs to be hit twice to exit
 
-#this should do advanced search history
+#advanced search history
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind '"\eOA": history-search-backward'
@@ -15,10 +15,18 @@ bind '"\t":menu-complete' #press tab to cycle through autocomplete options
 
 #Aliasing
 alias ll='ls -alh' #show all files and file info
+
 alias rebash='source ~/.bash_profile' #apply changes to bash_profile
 alias viewBash='subl ~/.bash_profile'
+
 alias subl='sublime' #use to open files in sublime, must use with https://ashleynolan.co.uk/blog/launching-sublime-from-the-terminal
+
 alias vmRun='vagrant up; vagrant ssh' #use to start virtual machine with vagrant
+alias runnin='ps -fA | grep python' #show all running python processes
+alias killp='pkill -f python' #kill all running python processes
+
+alias sl='sl -a' #run steamlocomotive, must have steamlocomotive installed
+
 
 ##Finder navigation
 alias ..='cd ..' #back 1 directory
@@ -27,7 +35,7 @@ trash () { command mv "$@" ~/.Trash ; } #move file to Trash
 
 #Grep
 export GREP_COLOR='1;35'
-alias grep='grep --color -nrs'
+alias grep='grep --color -nrs' #colored recursive grep search showing line numbers and ignoring nonexistent/unreadable files
 
 alias grepOpts='echo -c show number of occurences;
                 echo -h hide filenames;
