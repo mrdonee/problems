@@ -33,7 +33,7 @@ alias sl='sl -a' #run steamlocomotive, must have steamlocomotive installed
 #Git
 alias gs="git status"
 alias gc="git commit"
-alias ga="git add"
+alias ga="git add -p"
 alias gd="git diff"
 
 ##Finder navigation
