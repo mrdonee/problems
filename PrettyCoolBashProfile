@@ -1,5 +1,8 @@
 #Interface options
-export PS1="\[\033[36m\]\u\[\033[m\]|\[\033[32m\]\t\[\033[m\]|\[\033[33;1m\]\W\[\033[m\]\$ "
+export PS1="\[\033[36m\]\u\[\033[m\]|\[\033[32m\]\t\[\033[m\]|\[\033[33;1m\]\W\[\033[m\]\[\e[0;31m\]\$(parse_git_branch) \[\033[m\]$ "
+parse_git_branch() {
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
 #history options
 export HISTCONTROL=ignoredups:ignorespace   #history ignores duplicates and commands that start with ' '
@@ -27,6 +30,11 @@ alias killp='pkill -f python' #kill all running python processes
 
 alias sl='sl -a' #run steamlocomotive, must have steamlocomotive installed
 
+#Git
+alias gs="git status"
+alias gc="git commit"
+alias ga="git add"
+alias gd="git diff"
 
 ##Finder navigation
 alias ..='cd ..' #back 1 directory
